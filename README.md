@@ -30,28 +30,7 @@ The lab was built to simulate a small corporate Windows environment, collect end
 
 The following diagram illustrates the enterprise-style Active Directory SOC lab used throughout this project.
 
-> **Architecture diagram coming soon.**
-
-```text
-                 +------------------------+
-                 |   Kali Linux           |
-                 | Attack Simulation      |
-                 +-----------+------------+
-                             |
-                             |
-+----------------+      +-----v--------------------+
-| Windows 10     |----->| Ubuntu Server           |
-| Client         |      | Splunk Enterprise       |
-| Sysmon + UF    |      | SIEM Platform           |
-+----------------+      +-----------^-------------+
-                                     |
-                                     |
-+-----------------------------+      |
-| Windows Server 2022 (DC01)  |------+
-| Active Directory            |
-| DNS / Sysmon / UF           |
-+-----------------------------+
-```
+![Enterprise Active Directory SOC Home Lab Architecture](diagrams/lab-architecture.png)
 
 ## Lab Environment
 
