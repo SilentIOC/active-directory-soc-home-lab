@@ -1,5 +1,14 @@
 # Enterprise Active Directory SOC Home Lab
 
+![Splunk](https://img.shields.io/badge/Splunk-Enterprise-green)
+![Active Directory](https://img.shields.io/badge/Active%20Directory-Windows%20Server-blue)
+![Sysmon](https://img.shields.io/badge/Sysmon-Endpoint%20Telemetry-orange)
+![Windows Security](https://img.shields.io/badge/Windows-Security%20Events-blue)
+![SIEM](https://img.shields.io/badge/SIEM-Splunk-success)
+![Blue Team](https://img.shields.io/badge/Blue%20Team-SOC-informational)
+
+> **Enterprise Active Directory SOC Home Lab** built with **Splunk Enterprise**, **Windows Server 2022**, **Active Directory**, **Sysmon**, and **Splunk Universal Forwarders** to simulate a real-world Security Operations Center (SOC). This project demonstrates centralized log collection, Windows event analysis, detection engineering, dashboard creation, and security monitoring in an isolated enterprise lab environment.
+
 ## Project Overview
 
 This project demonstrates the design and operation of an enterprise-style Security Operations Center home lab using Splunk Enterprise, Windows Server 2022, Active Directory, Sysmon, Windows Event Logs, and Splunk Universal Forwarders.
@@ -16,6 +25,33 @@ The lab was built to simulate a small corporate Windows environment, collect end
 - Create SOC dashboards and detection searches
 - Simulate security events and validate detections
 - Develop practical blue-team and SIEM experience
+
+  ## 🏗️ Lab Architecture
+
+The following diagram illustrates the enterprise-style Active Directory SOC lab used throughout this project.
+
+> **Architecture diagram coming soon.**
+
+```text
+                 +------------------------+
+                 |   Kali Linux           |
+                 | Attack Simulation      |
+                 +-----------+------------+
+                             |
+                             |
++----------------+      +-----v--------------------+
+| Windows 10     |----->| Ubuntu Server           |
+| Client         |      | Splunk Enterprise       |
+| Sysmon + UF    |      | SIEM Platform           |
++----------------+      +-----------^-------------+
+                                     |
+                                     |
++-----------------------------+      |
+| Windows Server 2022 (DC01)  |------+
+| Active Directory            |
+| DNS / Sysmon / UF           |
++-----------------------------+
+```
 
 ## Lab Environment
 
