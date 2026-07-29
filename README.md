@@ -1,84 +1,67 @@
-# Active Directory SOC Home Lab
+# Enterprise Active Directory SOC Home Lab
 
-## Overview
-This project documents the creation of a Windows Active Directory home lab built for cybersecurity, SOC analyst, and blue team training.
+## Project Overview
 
-The environment includes:
-- Windows Server 2022 Domain Controller
-- Windows 10 domain-joined workstation
-- Ubuntu Server
-- Sysmon endpoint monitoring
-- SMB file shares
-- Active Directory users and Organizational Units
-- VirtualBox internal networking
+This project demonstrates the design and operation of an enterprise-style Security Operations Center home lab using Splunk Enterprise, Windows Server 2022, Active Directory, Sysmon, Windows Event Logs, and Splunk Universal Forwarders.
 
----
+The lab was built to simulate a small corporate Windows environment, collect endpoint telemetry, analyze security events, create SOC dashboards, and develop detection use cases based on common Windows security activity.
 
-## Lab Topology
+## Objectives
 
-- DC01 (Windows Server 2022)
-  - Active Directory Domain Services
-  - DNS Server
-  - Sysmon Logging
+- Build and configure a Windows Active Directory environment
+- Centralize Windows security logs in Splunk Enterprise
+- Deploy Splunk Universal Forwarders to Windows endpoints
+- Collect enhanced endpoint telemetry using Sysmon
+- Monitor authentication and administrative activity
+- Create SOC dashboards and detection searches
+- Simulate security events and validate detections
+- Develop practical blue-team and SIEM experience
 
-- WIN10-CLIENT01
-  - Domain joined Windows 10 workstation
-  - Domain user authentication
+## Lab Environment
 
-- SPLUNK01 (Ubuntu Server)
-  - Prepared for SIEM/Splunk deployment
+| System | Role |
+|---|---|
+| Windows Server 2022 | Active Directory Domain Controller |
+| Windows 10 | Domain-joined endpoint |
+| Ubuntu Server | Splunk Enterprise server |
+| Kali Linux | Security testing workstation |
+| Metasploitable2 | Vulnerable testing system |
+| Oracle VirtualBox | Virtualization platform |
 
----
+## Technologies Used
 
-## Tools & Technologies
-
-- Oracle VirtualBox
+- Splunk Enterprise
+- Splunk Universal Forwarder
+- Microsoft Active Directory
 - Windows Server 2022
-- Windows 10 Pro
-- Ubuntu Server 22.04
-- Active Directory
-- DNS
+- Windows 10
+- Ubuntu Server
 - Sysmon
-- SMB File Sharing
-- Windows Event Viewer
-- Linux Administration
+- Windows Event Logs
+- PowerShell
+- Oracle VirtualBox
+- Kali Linux
 
----
+## Data Flow
 
-## Skills Practiced
-
-- Active Directory administration
-- DNS troubleshooting
-- Static IP configuration
-- Domain joining
-- SMB permissions
-- Sysmon installation
-- Windows Event Log analysis
-- VirtualBox networking
-- Linux administration
-
----
-
-## Screenshots
-
-Screenshots will be added during future lab expansion.
-
----
-
-## Future Improvements
-
-- Splunk Enterprise SIEM
-- Sysmon log ingestion
-- Detection engineering
-- Brute force attack simulation
-- PowerShell logging
-- Windows Event Forwarding
-- Sigma rules
-- SOC dashboards
-
----
-
-## Author
+```text
+Windows Server 2022 (DC01)
+        |
+        | Windows Event Logs and Sysmon
+        v
+Splunk Universal Forwarder
+        |
+        | TCP 9997
+        v
+Ubuntu Splunk Enterprise Server
+        ^
+        | TCP 9997
+        |
+Splunk Universal Forwarder
+        ^
+        | Windows Event Logs and Sysmon
+        |
+Windows 10 Client (WIN10-CLIENT01)
 
 Julio E. Betancourt Jr  
 Cybersecurity Graduate Student  
